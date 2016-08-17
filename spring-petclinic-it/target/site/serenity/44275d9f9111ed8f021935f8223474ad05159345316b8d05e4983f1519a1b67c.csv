@@ -1,4 +1,0 @@
-"Story","Title","Result","Date","Stability","Duration (s)"
-"Add or update pet information.","Add a new pet for owner","SUCCESS","2016-08-17T19:50:40.166+04:00","0.0","23.58"
-"List all the registered pets.","Search pets without any criteria","SUCCESS","2016-08-17T19:51:06.685+04:00","0.0","4.36"
-"List all the registered vets.","Search vets without any criteria","SUCCESS","2016-08-17T19:51:13.337+04:00","0.0","4.31"

@@ -1,6 +1,0 @@
-org/springframework/samples/petclinic/service/ClinicServiceJdbcTests.class
-org/springframework/samples/petclinic/service/ClinicServiceSpringDataJpaTests.class
-org/springframework/samples/petclinic/model/ValidatorTests.class
-org/springframework/samples/petclinic/model/OwnerTests.class
-org/springframework/samples/petclinic/service/AbstractClinicServiceTests.class
-org/springframework/samples/petclinic/service/ClinicServiceJpaTests.class

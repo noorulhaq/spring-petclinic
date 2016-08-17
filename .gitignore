@@ -2,9 +2,10 @@
 /activemq-data
 /.settings
 /.project
-/target
+target
 target/**
 .classpath
 .project
 .metadata
 RemoteSystemsTempFiles
+Servers

@@ -1,1 +1,0 @@
-"use strict";function scrollNav(){$(".js-scroll-nav").click(function(){return $("html, body").stop().animate({scrollTop:$($(this).attr("href")).offset().top-20},1e3),!1})}$(function(){scrollNav()});
