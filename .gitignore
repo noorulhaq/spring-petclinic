@@ -1,0 +1,10 @@
+.DS_Store
+/activemq-data
+/.settings
+/.project
+/target
+target/**
+.classpath
+.project
+.metadata
+RemoteSystemsTempFiles

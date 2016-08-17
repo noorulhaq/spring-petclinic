@@ -1,0 +1,26 @@
+<acceptance-test-run title="Search pets without any criteria" name="Search pets without any criteria" description="" steps="3" successful="3" failures="0" skipped="0" ignored="0" pending="0" result="SUCCESS" duration="4357" timestamp="2016-08-17T19:51:06.685+04:00">
+  <user-story id="list-all-the-registered-pets." name="List all the registered pets." path="search_pets/search_pets.feature"/>
+  <tags>
+    <tag name="Search pets" type="capability"/>
+    <tag name="Search pets/List all the registered pets." type="feature"/>
+  </tags>
+  <test-step result="SUCCESS" duration="2837">
+    <screenshots>
+      <screenshot image="3a4cbf3c6f5710fed06cd8ea4caa4f60.png"/>
+    </screenshots>
+    <description>Given a registered user</description>
+  </test-step>
+  <test-step result="SUCCESS" duration="658">
+    <screenshots>
+      <screenshot image="300f94c38ab20f57778ff270b42b9834.png"/>
+    </screenshots>
+    <description>When I search pets without any criteria</description>
+  </test-step>
+  <test-step result="SUCCESS" duration="540">
+    <screenshots>
+      <screenshot image="093e76496d8c390f79ef180ae398b23c.png"/>
+      <screenshot image="c006bbe9c0c8a09018ed0c9275e1c5c2.png"/>
+    </screenshots>
+    <description>Then I shoud get a list of pets</description>
+  </test-step>
+</acceptance-test-run>

@@ -1,0 +1,33 @@
+<section id="owners" class="sections sections-narrow">
+  <div class="container">
+    <div class="action-items pull-right">
+      <div class="action-item pull-right">
+        View as
+        <div class="btn-group">
+          <a href="#" class="btn btn-default"><span class="glyphicon glyphicon-th" aria-hidden="true"></span></a>
+          <a href="#" class="btn btn-default"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span></a>
+        </div>
+      </div>
+      <div class="action-item pull-right">
+        Sort by
+        <div class="btn-group">
+          <a href="#" class="btn btn-default"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span></a>
+          <a href="#" class="btn btn-default"><span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span></a>
+        </div>
+      </div>
+    </div>
+    <h2 class="sub-header">Owners</h2>
+    <div class="row">
+      <div class="col-md-3" data-ng-repeat="owner in owners">
+        <div class="thumbnail">
+          <a data-ui-sref="ownerDetails({id: owner.id})"><img class="img-circle" data-ng-src="images/avatars/owner{{owner.id}}.jpg" alt="{{owner.firstName + ' ' + owner.lastName}}"></img></a>
+          <div class="caption">
+            <h3 class="caption-heading"><a href="show.html" data-ng-bind="owner.firstName + ' ' +owner.lastName"></a></h3>
+            <p data-ng-bind="owner.city"></p>
+            <p data-ng-bin="owner.address"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

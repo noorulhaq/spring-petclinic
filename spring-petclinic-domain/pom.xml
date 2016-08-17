@@ -1,0 +1,43 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>spring-petclinic-domain</artifactId>
+	<packaging>jar</packaging>
+
+	<name>spring-petclinic-domain</name>
+	<url>http://maven.apache.org</url>
+
+	<parent>
+		<groupId>org.springframework.samples</groupId>
+		<artifactId>spring-petclinic</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+
+	<dependencies>
+	
+		<dependency>
+			<groupId>org.jadira.usertype</groupId>
+			<artifactId>usertype.core</artifactId>
+			<version>${jadira-usertype-core.version}</version>
+		</dependency>	
+	
+			<!-- Database connection pool
+		See here for more details on commons-dbcp versus tomcat-jdbc:
+    	http://blog.ippon.fr/2013/03/13/improving-the-performance-of-the-spring-petclinic-sample-application-part-3-of-5/
+    -->
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>tomcat-jdbc</artifactId>
+			<version>${tomcat-jdbc.version}</version>
+			<scope>runtime</scope>
+		</dependency>
+	
+	</dependencies>
+	
+</project>

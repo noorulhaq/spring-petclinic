@@ -1,0 +1,41 @@
+<nav class="navbar navbar-default navbar-static-top" data-ng-if="getSession() != null">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#" data-ng-click="goHome()">
+        <img alt="Pet Clinic Brand" height="27" width="auto" src="images/logo.png">
+      </a>
+      <button class="navbar-toggle navbar-toggle-left collapsed" type="button" data-toggle="collapse" data-target="#nav-menu">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="glyphicon glyphicon-triangle-bottom"></span>
+      </button>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div id="nav-menu" class="navbar-collapse navbar-left collapse">
+      <ul class="nav navbar-nav navbar-menu">
+        <li data-ng-class="$state.is('dashboard') ? 'active' : ''"><a href="#" data-ng-click="goHome()">Dashboard</a></li>
+        <li data-ng-class="$state.is('owners') ? 'active' : ''"><a data-ui-sref="owners">Owners</a></li>
+        <li data-ng-class="$state.is('pets') ? 'active' : ''"><a data-ui-sref="pets">Pets</a></li>
+        <li data-ng-class="$state.is('vets') ? 'active' : ''"><a data-ui-sref="vets">Vets</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+
+    <ul class="nav navbar-profile">
+      <li><button class="nav-action" data-toggle="modal" data-target="#searchModal"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></li>
+      <li><button class="nav-action" data-toggle="modal" data-target="#addOwnerModal"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle img-profile" data-toggle="dropdown" role="button" aria-expanded="false">
+          <img class="img-circle img-circle-small" src="images/avatar.jpg" width="30" height="30">
+        </a>
+        <ul class="dropdown-menu navbar-dropdown-menu">
+          <li><a href="#">View Profile</a></li>
+          <li><a href="#">Settings</a></li>
+          <li><a href="#">Help</a></li>
+          <li class="divider"></li>
+          <li><a href="#" data-ng-click="logout()">Sign Out</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div><!-- /.container-fluid -->
+</nav>

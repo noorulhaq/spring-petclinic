@@ -1,0 +1,18 @@
+<section id="vets" class="sections sections-narrow" data-ng-controller="VeterinarianController">
+  <div class="container">
+    <a class="btn btn-primary pull-right" href="#" data-ui-sref="vets">See All Veterinarians <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+    <h2 class="sub-header">Veterinarians</h2>
+    <div class="row thumbnail-wrapper">
+      <div class="col-md-3" data-ng-repeat="vet in vets | limitTo : 8">
+        <div class="thumbnail">
+          <img data-ng-src="images/vets/vet{{vet.id%4 + 1}}.jpg" class="img-circle" alt="Generic placeholder image">
+          <div class="caption">
+            <h3 class="caption-heading" data-ng-bind="'Dr. ' + vet.firstName + ' ' + vet.lastName"></h3>
+            <p class="caption-meta"><span class="glyphicon glyphicon-phone-alt"></span> +6085558763</p>
+            <p class="caption-meta"><span class="caption-label" data-ng-repeat="specialty in vet.specialties"><span data-ng-bind="specialty.name">Surgery</span></span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

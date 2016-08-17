@@ -1,0 +1,24 @@
+<div class="jumbotron jumbotron-welcome">
+  <div class="container">
+    <header data-ng-if="getSession() == null">
+      <a class="navbar-brand navbar-brand-nopadding pull-left" href="/">
+        <img alt="Pet Clinic Brand" height="27" width="auto" src="images/logo-brand.png">
+      </a>
+      <a class="btn btn-default btn-inverse pull-right" href="#" data-ng-click="login()">Sign In</a>
+    </header>
+    <div class="jumbotron-headline">
+      <div class="jumbotron-headline-cell">
+        <h1>Pet care for the People who love them</h1>
+        <p>PetClinic is here to enhance people's relationships with their pets</p>
+        <p>
+          <a class="btn btn-cta" data-scroll-to-target href="#appointment" role="button">Make an Appointment</a>
+          <a class="btn btn-cta btn-inverse" data-scroll-to-target href="#services" role="button">Learn More</a>
+        </p>
+        <a href="#services" data-scroll-to-target class="scroll-down">Scroll Down</a>
+      </div>
+    </div>
+  </div>
+  <video loop="loop" preload="auto" class="jumbotron-video" autoplay muted>
+    <source src="videos/hero.mp4" type="video/mp4">
+  </video>
+</div>

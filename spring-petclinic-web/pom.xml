@@ -1,0 +1,214 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.springframework.samples</groupId>
+		<artifactId>spring-petclinic</artifactId>
+		<version>1.0.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>spring-petclinic-web</artifactId>
+
+	<packaging>war</packaging>
+	<name>spring-petclinic-web</name>
+
+
+	<properties>
+
+		<sonar.javascript.coveragePlugin>lcov</sonar.javascript.coveragePlugin>
+		<sonar.sources>target/reports/jscover-maven/file/original-src</sonar.sources>
+		<sonar.javascript.lcov.itReportPath>target/jscover.lcov</sonar.javascript.lcov.itReportPath>
+		<sonar.exclusions>src/main/webapp/plugins/**/*</sonar.exclusions>
+
+	</properties>
+
+	<build>
+		<finalName>petclinic</finalName>
+
+		<plugins>
+			<plugin>
+				<groupId>com.github.tntim96</groupId>
+				<artifactId>jscover-file-maven-plugin</artifactId>
+				<version>1.0.18</version>
+				<executions>
+					<execution>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>instrument</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<srcDir>src</srcDir>
+					<testDirectory>src/test</testDirectory>
+					<instrumentPathArgs>
+						<arg>--no-instrument=main/webapp/js/lib/</arg>
+						<arg>--no-instrument=main/webapp/plugins/</arg>
+						<arg>--no-instrument=main/webapp/static/</arg>
+						<arg>--no-instrument=test</arg>
+					</instrumentPathArgs>
+					<excludeArgs>
+						<excludeArg>--exclude=main/java</excludeArg>
+						<excludeArg>--exclude=main/resources</excludeArg>
+					</excludeArgs>
+					<reportDir>target/reports/jscover-maven/file</reportDir>
+					<reportCoberturaXML>true</reportCoberturaXML>
+					<reportLCOV>true</reportLCOV>
+				</configuration>
+			</plugin>
+
+			<!-- This plugin is used to copy artifacts in docker folder during application 
+				packaging phase -->
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>3.0.1</version>
+				<executions>
+					<execution>
+						<id>copy-instrumented-js-project</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${basedir}/target/reports/jscover-maven/file/main/webapp</outputDirectory>
+							<resources>
+								<resource>
+									<directory>${basedir}/target/${project.build.finalName}</directory>
+									<excludes>
+										<exclude>**/*.jar</exclude>
+									</excludes>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<webResources>
+						<resource>
+							<!-- copy resources from this folder into the webapp before packaging -->
+							<directory>${basedir}/target/reports/jscover-maven/file/main/webapp</directory>
+						</resource>
+						<resource>
+							<!-- copy resources from this folder into the webapp before packaging -->
+							<directory>${basedir}/target/reports/jscover-maven/file</directory>
+							<excludes>
+								<exclude>main/</exclude>
+								<exclude>test/</exclude>
+							</excludes>
+						</resource>
+					</webResources>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+
+	<profiles>
+
+
+
+
+		<profile>
+			<id>collect-it-data</id>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-resources-plugin</artifactId>
+						<version>3.0.1</version>
+						<executions>
+							<execution>
+								<id>copy-domain-src-in-api</id>
+								<phase>post-integration-test</phase>
+								<goals>
+									<goal>copy-resources</goal>
+								</goals>
+								<configuration>
+									<outputDirectory>target</outputDirectory>
+									<resources>
+										<resource>
+											<directory>../spring-petclinic-it/target</directory>
+											<includes>
+												<include>jscoverage.json</include>
+											</includes>
+										</resource>
+									</resources>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>exec-maven-plugin</artifactId>
+						<version>1.2.1</version>
+						<executions>
+							<execution>
+								<id>generate-lcov-file</id>
+								<phase>post-integration-test</phase>
+								<goals>
+									<goal>exec</goal>
+								</goals>
+								<configuration>
+									<executable>java</executable>
+									<arguments>
+										<argument>-cp</argument>
+										<argument>${project.basedir}/libs/JSCover-all.jar</argument>
+										<argument>jscover.report.Main</argument>
+										<argument>--format=LCOV</argument>
+										<argument>target</argument>
+										<argument>target/reports/jscover-maven/file/original-src</argument>
+									</arguments>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+
+				</plugins>
+			</build>
+		</profile>
+
+
+		<!-- Cargo configuration to execute integration tests -->
+		<!-- in an ad-hoc provisioned Tomcat container -->
+		<profile>
+			<id>cargo-tomcat</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.codehaus.cargo</groupId>
+						<artifactId>cargo-maven2-plugin</artifactId>
+						<version>1.2.1</version>
+						<configuration>
+							<!-- <deployable type="war" file="petclinic.war"/> -->
+							<container>
+								<containerId>tomcat7x</containerId>
+								<zipUrlInstaller>
+									<url>${tomcat.downloadUrl}</url>
+								</zipUrlInstaller>
+							</container>
+							<configuration>
+
+								<properties>
+									<cargo.servlet.port>9967</cargo.servlet.port>
+									<cargo.tomcat.ajp.port>9968</cargo.tomcat.ajp.port>
+									<cargo.rmi.port>9969</cargo.rmi.port>
+								</properties>
+							</configuration>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+	</profiles>
+
+</project>

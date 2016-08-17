@@ -1,0 +1,141 @@
+<!-- Owner Brief Info -->
+<header class="sections sections-narrow sections-light">
+  <div class="container">
+    <div class="media media-welcome">
+      <div class="media-left">
+        <img data-ng-src="images/avatars/owner{{currentOwner.id}}.jpg" class="img-circle media-object" width="90" height="90">
+      </div>
+      <div class="media-body">
+        <div class="pull-right stats stats-md">
+          <ul>
+            <li>{{currentOwner.pets.length || 0}}<span>Pets</span></li>
+            <li>{{currentOwner.visits.length || 0}}<span>Visits</span></li>
+          </ul>
+        </div>
+        <h1 class="h3" data-ng-bind="currentOwner.firstName + ' ' + currentOwner.lastName"></h1>
+        <p data-ng-bind="currentOwner.description">Maria Escobito</p>
+        <p><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> <span data-ng-bind="currentOwner.address">345 Maple St.</span>, <span data-ng-bind="currentOwner.city">Madison</span></p>
+        <div class="btn-group">
+          <a href="#" class="btn btn-link"><span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span> Call</a>
+          <a href="#" class="btn btn-link"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Message</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Owners -->
+<section id="ownersInfo" class="sections sections-no-padding sections-darker">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9 col-border-right">
+        <div class="section-inner-padding">
+          <button class="btn btn-primary pull-right" data-toggle="modal" data-target="#editOwnerModal"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit Owner</button>
+          <h2 class="h3 sub-header">Owner Information</h2>
+          <form class="form-inline form-inline-display">
+            <div class="form-group">
+              <p>First Name</p>
+              <p class="h5" data-ng-bind="currentOwner.firstName">Maria</p>
+            </div>
+            <div class="form-group">
+              <p>Last Name</p>
+              <p class="h5" data-ng-bind="currentOwner.lastName">Rodriguez</p>
+            </div>
+            <div class="form-group">
+              <p>Address</p>
+              <p class="h5" data-ng-bind="currentOwner.address">345 Maple St.</p>
+            </div>
+            <div class="form-group">
+              <p>City</p>
+              <p class="h5" data-ng-bind="currentOwner.city">Madison</p>
+            </div>
+            <div class="form-group">
+              <p>Contact Number</p>
+              <p class="h5" data-ng-bind="currentOwner.telephone">6085557683</p>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="section-inner-padding">
+          <h2 class="h3 sub-header">Owner Activities</h2>
+          <!-- List group -->
+          <ul class="list-group">
+            <li class="list-group-item">
+              <span class="glyphicon glyphicon-retweet" aria-hidden="true"></span>
+              <strong>Next Appointment:</strong> None</li>
+            <li class="list-group-item">
+              <span class="glyphicon glyphicon-road" aria-hidden="true"></span>
+              <strong>Last Visited:</strong> 02 Feb 2015</li>
+            <li class="list-group-item">
+              <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+              <strong>Due Date:</strong> 14 Mar 2015</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pets -->
+<section id="pets" class="sections sections-narrow">
+  <div class="container">
+    <div class="action-wrappers pull-right">
+      <button class="btn btn-primary pull-right action-item" data-toggle="modal" data-target="#petModal" data-ng-click="addPet()">
+        <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Add New Pet
+      </button>
+      <div class="pull-right action-item">
+        View as
+        <div class="btn-group">
+          <a class="btn btn-default">
+            <span class="glyphicon glyphicon-th" aria-hidden="true"></span>
+          </a>
+          <a class="btn btn-default">
+            <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <h2 class="sub-header">Owner's Pets</h2>
+    <div class="row thumbnail-wrapper">
+      <div data-ng-repeat="pet in currentOwner.pets" class="col-md-3">
+        <div class="thumbnail">
+          <img data-ng-src="images/pets/pet{{pet.id % 10 + 1}}.jpg" class="img-circle" alt="Generic placeholder image">
+          <div class="caption">
+            <h3 class="caption-heading" data-ng-bind="pet.name">Basil</h3>
+            <p class="caption-meta" data-ng-bind="pet.birthdate">08 August 2012</p>
+            <p class="caption-meta"><span class="caption-label" data-ng-bind="pet.type.name">Hamster</span></p>
+          </div>
+          <div class="action-bar">
+            <button class="btn btn-default" data-toggle="modal" data-target="#petModal" data-ng-click="editPet(pet.id)">
+              <span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit Pet
+            </button>
+            <button class="btn btn-default" data-toggle="modal" data-target="#addPetVisitModal">
+              <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Add Visit
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pets -->
+<section id="pets" class="sections sections-bottom-nav sections-darker">
+  <div class="container">
+    <ul class="pager pager-link pull-left">
+      <li><a data-ui-sref="owners"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Back to Owners List</a></li>
+    </ul>
+    <ul class="pager pager-link pull-right">
+      <li><a data-ui-sref="ownerDetails({id:prevOwner.id})"><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> {{prevOwner.firstName + ' ' + prevOwner.lastName}}</a></li>
+      <li><a data-ui-sref="ownerDetails({id:nextOwner.id})">{{nextOwner.firstName + ' ' + nextOwner.lastName}}<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- Add Owner modal -->
+<data-ng-include src="'components/_partials/_modal_add_owner.html'"></data-ng-include>
+<!-- Add Pet modal -->
+<data-ng-include src="'components/_partials/_modal_add_pet.html'"></data-ng-include>
+<!-- Add Pet Visit modal -->
+<data-ng-include src="'components/_partials/_modal_add_pet_visit.html'"></data-ng-include>

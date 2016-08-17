@@ -1,0 +1,28 @@
+<section id="owners" class="sections sections-narrow" data-ng-controller="OwnerController">
+  <div class="container">
+    <a class="btn btn-primary pull-right" href="#" data-ui-sref="owners">See All Owners <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+    <h2 class="sub-header">Owners</h2>
+    <div class="row thumbnail-wrapper">
+      <div class="col-md-3" data-ng-repeat="owner in owners | limitTo : 8">
+        <div class="thumbnail">
+          <a data-ui-sref="ownerDetails({id: owner.id})"><img data-ng-src="images/avatars/owner{{owner.id}}.jpg" class="img-circle" alt="Generic placeholder image"></a>
+          <div class="caption">
+            <h3 class="caption-heading"><a data-ui-sref="ownerDetails({id: owner.id})" data-ng-bind="owner.firstName + ' ' +owner.lastName"></a></h3>
+            <p class="caption-meta" data-ng-bind="owner.city"></p>
+            <p class="caption-meta"><span class="glyphicon glyphicon-phone-alt"></span> <span data-ng-bind="owner.telephone"></span></p>
+          </div>
+          <div class="action-bar">
+            <ul>
+              <li>
+                <a data-ui-sref="ownerDetails({id: owner.id})"><img data-ng-src="images/pets/pet{{owner.id}}.jpg"  class="img-circle img-circle-small" alt="Generic placeholder image" height="30" width="30"></a>
+              </li>
+              <li>
+                <a data-ui-sref="ownerDetails({id: owner.id})" class="btn-add-pet"><span class="glyphicon glyphicon-plus"></span></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

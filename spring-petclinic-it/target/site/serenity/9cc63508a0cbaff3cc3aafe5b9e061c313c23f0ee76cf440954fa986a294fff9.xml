@@ -1,0 +1,27 @@
+<acceptance-test-run title="Search vets without any criteria" name="Search vets without any criteria" description="" steps="3" successful="3" failures="0" skipped="0" ignored="0" pending="0" result="SUCCESS" duration="4307" timestamp="2016-08-17T19:51:13.337+04:00">
+  <user-story id="list-all-the-registered-vets." name="List all the registered vets." path="search_vets/search_vets.feature"/>
+  <tags>
+    <tag name="Search vets" type="capability"/>
+    <tag name="Search vets/List all the registered vets." type="feature"/>
+  </tags>
+  <test-step result="SUCCESS" duration="2903">
+    <screenshots>
+      <screenshot image="98ab8af95b3a1f1766fc9ebecf7dafd1.png"/>
+    </screenshots>
+    <description>Given a registered user</description>
+  </test-step>
+  <test-step result="SUCCESS" duration="604">
+    <screenshots>
+      <screenshot image="3a4cbf3c6f5710fed06cd8ea4caa4f60.png"/>
+      <screenshot image="bdbf38a2a2afda1c46926ea8492430b5.png"/>
+    </screenshots>
+    <description>When I search vets without any criteria</description>
+  </test-step>
+  <test-step result="SUCCESS" duration="571">
+    <screenshots>
+      <screenshot image="997f2a54a952008c8d18f8e2f33efdf1.png"/>
+      <screenshot image="4017c843ad372fc707924a3004ea8f00.png"/>
+    </screenshots>
+    <description>Then I shoud get a list of vets</description>
+  </test-step>
+</acceptance-test-run>
