@@ -1,10 +1,10 @@
 Feature: List all the registered vets.
 
-	# <<UserStory>>
-	# As a registered user
-	# I should be able to search list available vets
-	# So that I can choose any one of them to schedule appointment
+	As a registered user
+	I should be able to search list available vets
+	So that I can choose any one of them to schedule appointment
 
+	@Dev @Qmg
 	Scenario: Search vets without any criteria
 		Given a registered user
 		When I search vets without any criteria
