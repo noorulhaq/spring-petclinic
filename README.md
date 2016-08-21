@@ -5,9 +5,9 @@ The purpose of this project is to demonstrate how coverage against BDD based acc
 ![alt tag](https://github.com/noorulhaq/spring-petclinic/blob/master/assets/sonar.png)
 
 Acceptance tests are witten using following frameworks:
-* Cucumber
-* Selenium Web Driver
-* Serenity 
+* Cucumber (BDD)
+* Selenium Webdriver (Integration Testing)
+* Serenity (BDD and Integration Testing orchestrator)
 
 Below is the sample automated acceptance test outcome that you will find in spring-petclinic-it/target/site/serenity folder after execution of tests:
 ![alt tag](https://github.com/noorulhaq/spring-petclinic/blob/master/assets/report.png) 
