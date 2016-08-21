@@ -4,6 +4,11 @@ The purpose of this project is to demonstrate how coverage against BDD based acc
 
 ![alt tag](https://github.com/noorulhaq/spring-petclinic/blob/master/assets/sonar.png)
 
+Acceptance tests are witten using following frameworks:
+1) Cucumber
+2) Selenium Web Driver
+3) Serenity 
+
 ## spring-petclinic (AUT)
 Application under test is taken from a sample https://github.com/singularity-sg/spring-petclinic. I have just decomposed the application into multiple modules to create a multimodule maven project.
 
