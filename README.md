@@ -1,10 +1,10 @@
-#Automated Acceptance Testing with Code Coverage Sample
+#Automated Acceptance Testing with Code Coverage
 
 The purpose of this project is to demonstrate how coverage against BDD based acceptance tests can be achieved for both java and javascript at the same time. After following execution steps you should be able to see covergae results in sonar as shown below.
 
 ![alt tag](https://github.com/noorulhaq/spring-petclinic/blob/master/assets/sonar.png)
 
-Acceptance tests are witten using following frameworks:
+Acceptance tests are written using following frameworks:
 * Cucumber (BDD)
 * Selenium Webdriver (Integration Testing)
 * Serenity (BDD and Integration Testing orchestrator)
@@ -32,7 +32,7 @@ Contains automated acceptance tests.
 * Run __mvn clean install__ at project root level.
 * Launch api project using __mvn cargo:run -P cargo-tomcat__ command inside __spring-petclinic-api__ module.
 * Launch api project using __mvn cargo:run -P cargo-tomcat__ command inside __spring-petclinic-web__ module.
-* Access web application from any proxy server (Apache, Nginx) to avoid CORS issues. Refer to sample configuration file provided in assests folder for apache web server.
+* Access web application from any proxy server (Apache, Nginx) to avoid CORS issues. Refer to sample [configuration file] (https://github.com/noorulhaq/spring-petclinic/blob/master/assets/httpd.conf) provided in assests folder for apache web server.
 * Execute acceptance tests using __mvn verify -e -P it-tests,Dev__ command from spring-petclinic-it module with following JVM arguments:
 <br/>*-Dselenium.driver=org.openqa.selenium.chrome.ChromeDriver*
 <br/>*-Dwebdriver.chrome.driver=/path/to/chromedriver*. You can download chrome driver from  [here](https://sites.google.com/a/chromium.org/chromedriver/)
