@@ -29,4 +29,10 @@ Common project shared among multiple modules.
 Contains automated acceptance tests.
 
 ## Execution Steps
-* Run --mvn clean install-- at project root level. 
+* Run __mvn clean install__ at project root level.
+* Launch api project using __mvn cargo:run -P cargo-tomcat__ command inside __spring-petclinic-api__ module.
+* Launch api project using __mvn cargo:run -P cargo-tomcat__ command inside __spring-petclinic-web__ module.
+* Access web application from any proxy server (Apache, Nginx). Refer to sample configuration file provided in assests folder for apache web server.
+* Execute acceptance tests using __mnv verify -e -P it-tests,Dev__ command from spring-petclinic-it module.
+* Run __mvn verify -e -P collect-it-data__ at project root level to collect the code coverage stats.
+* Run __mvn sonar:sonar -pl !spring-petclinic-it,!spring-petclinic-common  -Dsonar.host.url=http://docker.me:9001__ command at project root level to submit the stats to sonarQube. Change __sonar.host.url__ to your sonarQube location.
