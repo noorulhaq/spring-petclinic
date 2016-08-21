@@ -2,7 +2,7 @@
 
 The purpose of this project is to demonstrate how coverage against BDD based acceptance tests can be achieved for both java and javascript at the same time. Code coverage is achieved using following libraries:
 
-1. [JSCover](http://tntim96.github.io/JSCover) (File system based instrumentation for javascript code coverage).
+* [JSCover](http://tntim96.github.io/JSCover) (File system based instrumentation for javascript code coverage).
 * [Jacoco](http://www.eclemma.org/jacoco) (On-the-fly code indtrumentation for java code coverage).
 
 After following execution steps you should be able to see covergae results in sonar as shown below.
@@ -34,7 +34,7 @@ Common project shared among multiple modules.
 Contains automated acceptance tests.
 
 ## Execution Steps
-* Run __mvn clean install__ at project root level.
+1. Run __mvn clean install__ at project root level.
 * Launch api project using __mvn cargo:run -P cargo-tomcat__ command inside __spring-petclinic-api__ module.
 * Launch api project using __mvn cargo:run -P cargo-tomcat__ command inside __spring-petclinic-web__ module.
 * Access web application from any proxy server (Apache, Nginx) to avoid CORS issues. Refer to sample [configuration file] (https://github.com/noorulhaq/spring-petclinic/blob/master/assets/httpd.conf) provided in assests folder for apache web server.
