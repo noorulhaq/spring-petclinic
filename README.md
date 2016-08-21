@@ -28,4 +28,5 @@ Common project shared among multiple modules.
 ### spring-petclinic-it
 Contains automated acceptance tests.
 
-
+## Execution Steps
+* Run --mvn clean install-- at project root level. 
