@@ -2,17 +2,17 @@
 
 The purpose of this project is to demonstrate how coverage against BDD based acceptance tests can be achieved for both java and javascript at the same time. Code coverage is achieved using following libraries:
 
-* [JSCover] (http://tntim96.github.io/JSCover) (File system based instrumentation for javascript code coverage).
-* [Jacoco] (http://www.eclemma.org/jacoco) (On-the-fly code indtrumentation for java code coverage).
+* [JSCover](http://tntim96.github.io/JSCover) (File system based instrumentation for javascript code coverage).
+* [Jacoco](http://www.eclemma.org/jacoco) (On-the-fly code indtrumentation for java code coverage).
 
 After following execution steps you should be able to see covergae results in sonar as shown below.
 
 ![alt tag](https://github.com/noorulhaq/spring-petclinic/blob/master/assets/sonar.png)
 
 Acceptance tests are written using following frameworks:
-* Cucumber (BDD)
-* Selenium Webdriver (Integration Testing)
-* Serenity (BDD and Integration Testing orchestrator)
+* [Cucumber](https://cucumber.io/) (BDD) 
+* [Selenium Webdrive](http://www.seleniumhq.org/projects/webdriver) (Integration Testing)
+* [Serenity](http://www.thucydides.info/#/) (BDD and Integration Testing orchestrator)
 
 Below is the sample automated acceptance test outcome that you will find in spring-petclinic-it/target/site/serenity folder after execution of tests:
 ![alt tag](https://github.com/noorulhaq/spring-petclinic/blob/master/assets/report.png) 
