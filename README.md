@@ -13,7 +13,7 @@ Below is the sample automated acceptance test outcome that you will find in spri
 ![alt tag](https://github.com/noorulhaq/spring-petclinic/blob/master/assets/report.png) 
 
 ## spring-petclinic (AUT)
-Application under test is taken from a sample [spring-petclinic](https://github.com/singularity-sg/spring-petclinic). I have just decomposed the application into multiple modules to create a multimodule maven project.
+Application under test is taken from a sample [spring-petclinic](https://github.com/singularity-sg/spring-petclinic) application. I have just decomposed the application into multiple modules to create a multimodule maven project.
 
 Decomposed modules are described below:
 
@@ -35,7 +35,7 @@ Contains automated acceptance tests.
 * Access web application from any proxy server (Apache, Nginx). Refer to sample configuration file provided in assests folder for apache web server.
 * Execute acceptance tests using __mvn verify -e -P it-tests,Dev__ command from spring-petclinic-it module with following JVM arguments:
 <br/>-Dselenium.driver=org.openqa.selenium.chrome.ChromeDriver
-<br/>-Dwebdriver.chrome.driver=/path/to/chromedriver. You can download chrome driver from  [ChromeDriver](https://sites.google.com/a/chromium.org/chromedriver/)
+<br/>-Dwebdriver.chrome.driver=/path/to/chromedriver. You can download chrome driver from  [here](https://sites.google.com/a/chromium.org/chromedriver/)
 <br/>-Dwebdriver.base.url=http://localhost:7272
 <br/> Here __webdriver.base.url__ is the url where your webserver serves the petclinic application.
 * Run __mvn verify -e -P collect-it-data__ at project root level to collect the code coverage stats.
