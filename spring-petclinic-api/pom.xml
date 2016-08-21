@@ -294,7 +294,7 @@
 						<configuration>
 							<mainClass>org.spring.petclinic.common.jacoco.coverage.JacocoDataCollectionTest</mainClass>
 							<arguments>
-								<argument>service:jmx:rmi:///jndi/rmi://localhost:9999/jmxrmi</argument>
+								<argument>service:jmx:rmi:///jndi/${server.jmx.url}</argument>
 								<argument>${project.basedir}/target/jacoco-it.exec</argument>
 							</arguments>
 						</configuration>
