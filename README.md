@@ -1,6 +1,6 @@
 #Automated Acceptance Test with Code Coverage Sample
 
-The purpose of this project is to demonstrates how coverage against BDD based acceptance tests can be achieved for both java and javascript at the same time. After following below mentioned steps you should be able to see covergae results in sonar as shown below.
+The purpose of this project is to demonstrate how coverage against BDD based acceptance tests can be achieved for both java and javascript at the same time. After following below mentioned steps you should be able to see covergae results in sonar as shown below.
 
 ## spring-petclinic (AUT)
 Application under test is taken from a sample https://github.com/singularity-sg/spring-petclinic. I have just decomposed the application into multiple modules to create a multimodule maven project.
