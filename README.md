@@ -9,6 +9,9 @@ Acceptance tests are witten using following frameworks:
 * Selenium Web Driver
 * Serenity 
 
+Automated acceptance test outcome is shown below:
+![alt tag](https://github.com/noorulhaq/spring-petclinic/blob/master/assets/report.png) 
+
 ## spring-petclinic (AUT)
 Application under test is taken from a sample https://github.com/singularity-sg/spring-petclinic. I have just decomposed the application into multiple modules to create a multimodule maven project.
 
@@ -24,4 +27,5 @@ Contains web layer artifacts developed in AngularJS.
 Common project shared among multiple modules.
 ### spring-petclinic-it
 Contains automated acceptance tests.
+
 
