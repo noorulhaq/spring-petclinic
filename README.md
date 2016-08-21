@@ -9,7 +9,7 @@ Acceptance tests are witten using following frameworks:
 * Selenium Web Driver
 * Serenity 
 
-Automated acceptance test outcome is shown below:
+Below is automated acceptance test outcome:
 ![alt tag](https://github.com/noorulhaq/spring-petclinic/blob/master/assets/report.png) 
 
 ## spring-petclinic (AUT)
