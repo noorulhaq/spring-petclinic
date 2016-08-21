@@ -4,7 +4,7 @@ The purpose of this project is to demonstrate how coverage against BDD based acc
 
 ![alt tag](https://github.com/noorulhaq/spring-petclinic/blob/master/assets/sonar.png)
 
-Acceptance tests are witten using following frameworks:
+Acceptance tests are written using following frameworks:
 * Cucumber (BDD)
 * Selenium Webdriver (Integration Testing)
 * Serenity (BDD and Integration Testing orchestrator)
