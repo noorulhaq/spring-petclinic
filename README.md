@@ -1,6 +1,6 @@
 #Automated Acceptance Testing with Code Coverage Sample
 
-The purpose of this project is to demonstrate how coverage against BDD based acceptance tests can be achieved for both java and javascript at the same time. After following below mentioned steps you should be able to see covergae results in sonar as shown below.
+The purpose of this project is to demonstrate how coverage against BDD based acceptance tests can be achieved for both java and javascript at the same time. After following execution steps you should be able to see covergae results in sonar as shown below.
 
 ![alt tag](https://github.com/noorulhaq/spring-petclinic/blob/master/assets/sonar.png)
 
@@ -9,7 +9,7 @@ Acceptance tests are witten using following frameworks:
 * Selenium Web Driver
 * Serenity 
 
-Below is automated acceptance test outcome:
+Below is the sample automated acceptance test outcome that you will find in spring-petclinic-it/target/site/serenity folder after execution of tests:
 ![alt tag](https://github.com/noorulhaq/spring-petclinic/blob/master/assets/report.png) 
 
 ## spring-petclinic (AUT)
