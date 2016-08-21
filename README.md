@@ -1,6 +1,11 @@
 #Automated Acceptance Testing with Code Coverage
 
-The purpose of this project is to demonstrate how coverage against BDD based acceptance tests can be achieved for both java and javascript at the same time. After following execution steps you should be able to see covergae results in sonar as shown below.
+The purpose of this project is to demonstrate how coverage against BDD based acceptance tests can be achieved for both java and javascript at the same time. Code coverage is achieved using following framworks:
+
+* [JSCover] (http://tntim96.github.io/JSCover) (File system based instrumentation for javascript code coverage).
+* [Jacoco] (http://www.eclemma.org/jacoco) (On-the-fly code indtrumentation for java code coverage).
+
+After following execution steps you should be able to see covergae results in sonar as shown below.
 
 ![alt tag](https://github.com/noorulhaq/spring-petclinic/blob/master/assets/sonar.png)
 
