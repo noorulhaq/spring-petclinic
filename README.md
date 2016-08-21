@@ -1,4 +1,4 @@
-
+#Automated acceptance test with code coverage
 
 ## spring-petclinic
 Application under test (AUT) is taken from a sample https://github.com/singularity-sg/spring-petclinic. I have just decomposed the application into multiple modules to create a multimodule maven project.
