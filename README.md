@@ -1,4 +1,4 @@
-#Automated Acceptance Testing with Code Coverage Sample
+#Automated Acceptance Testing with Code Coverage
 
 The purpose of this project is to demonstrate how coverage against BDD based acceptance tests can be achieved for both java and javascript at the same time. After following execution steps you should be able to see covergae results in sonar as shown below.
 
